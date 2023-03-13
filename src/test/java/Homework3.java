@@ -11,8 +11,10 @@ public class Homework3 {
     WebDriver wd;
 
     @BeforeClass
-    wd= new ChromeDriver;
-    wd.get("https://telranedu.web.app/login");
+   public void preCond(){
+        wd = new ChromeDriver();
+        wd.get("https://telranedu.web.app/login");
+    }
 
     @Test
     public void byTag(){
@@ -22,15 +24,15 @@ public class Homework3 {
         WebElement tag4= wd.findElement(By.xpath("//meta"));
         WebElement tag5= wd.findElement(By.xpath("//div"));
     }
-@Test
+     @Test
     public void byClass(){
-        WebElement class= wd.findElement(By.xpath("/html/body/div/div[@class='navbar-component_nav__1X_4m']"));
+        WebElement clas = wd.findElement(By.xpath("/html/body/div/div[@class='navbar-component_nav__1X_4m']"));
         WebElement class1= wd.findElement(By.xpath("//div[@class='navbar-component_nav__1X_4m']"));
         WebElement class3= wd.findElement(By.xpath("//*[@class='navbar-component_nav__1X_4m']"));
 
 }
 
-@Test
+     @Test
     public void byAtrib(){
         WebElement atr=  wd.findElement(By.xpath("//a[starts-with(@href,'/home')]"));
         WebElement atr1= wd.findElement(By.xpath("//a[contains(@href,'/home')]"));
